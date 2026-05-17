@@ -42,7 +42,7 @@ apis:
         url: https://docs.knack.com/reference/introduction-to-the-api
       - type: Using the API
         url: https://docs.knack.com/docs/using-the-api
-      - type: API Reference
+      - type: APIReference
         url: https://docs.knack.com/reference/using-the-api
 
 common:
@@ -52,7 +52,7 @@ common:
     url: https://docs.knack.com
   - type: Pricing
     url: https://www.knack.com/pricing
-  - type: Sign Up
+  - type: SignUp
     url: https://dashboard.knack.com/sign-up
   - type: Support
     url: https://support.knack.com
