@@ -46,6 +46,10 @@ apis:
         url: https://docs.knack.com/reference/using-the-api
 
 common:
+  - type: GitHubOrganization
+    url: https://github.com/knackhq
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/knackhq
   - type: Website
     url: https://www.knack.com
   - type: Documentation
