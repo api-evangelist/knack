@@ -1,0 +1,214 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Knack REST API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Knack-Application-Id",
+      "value": "{{X-Knack-Application-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Object Records",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Object Records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.knack.com/v1/objects/:object_key/records",
+            "params": [
+              {
+                "name": "object_key",
+                "value": "",
+                "type": "path",
+                "description": "Object key (for example, object_1)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to retrieve"
+              },
+              {
+                "name": "rows_per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of records per page"
+              },
+              {
+                "name": "sort_field",
+                "value": "",
+                "type": "query",
+                "description": "Field key to sort by"
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction"
+              },
+              {
+                "name": "filters",
+                "value": "",
+                "type": "query",
+                "description": "JSON-encoded filter rules"
+              }
+            ]
+          },
+          "docs": "Retrieve a paginated list of records for a given object. Supports filtering, sorting, and pagination via query parameters."
+        },
+        {
+          "info": {
+            "name": "Create Object Record",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.knack.com/v1/objects/:object_key/records",
+            "params": [
+              {
+                "name": "object_key",
+                "value": "",
+                "type": "path",
+                "description": "Object key (for example, object_1)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new record for the specified object."
+        },
+        {
+          "info": {
+            "name": "Get Object Record",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.knack.com/v1/objects/:object_key/records/:record_id",
+            "params": [
+              {
+                "name": "object_key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "record_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a single record by identifier from a given object."
+        },
+        {
+          "info": {
+            "name": "Update Object Record",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.knack.com/v1/objects/:object_key/records/:record_id",
+            "params": [
+              {
+                "name": "object_key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "record_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update fields on an existing record by identifier."
+        },
+        {
+          "info": {
+            "name": "Delete Object Record",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.knack.com/v1/objects/:object_key/records/:record_id",
+            "params": [
+              {
+                "name": "object_key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "record_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a record by identifier from a given object."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "View Records",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List View Records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.knack.com/v1/pages/:scene_key/views/:view_key/records",
+            "params": [
+              {
+                "name": "scene_key",
+                "value": "",
+                "type": "path",
+                "description": "Scene (page) key (for example, scene_1)"
+              },
+              {
+                "name": "view_key",
+                "value": "",
+                "type": "path",
+                "description": "View key (for example, view_1)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rows_per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve records via a page view. View-based requests honor the view's configured filters, columns, and access controls."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
