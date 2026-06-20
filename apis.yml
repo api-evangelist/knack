@@ -8,7 +8,7 @@ description: >-
   API with predictable URLs for creating, retrieving, updating, and deleting
   records, authenticated via an Application ID and REST API key.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - No-Code
   - Database
