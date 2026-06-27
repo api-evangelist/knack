@@ -56,11 +56,11 @@ common:
     url: https://docs.knack.com
   - type: Pricing
     url: https://www.knack.com/pricing
-  - type: SignUp
+  - type: Signup
     url: https://dashboard.knack.com/sign-up
   - type: Support
     url: https://support.knack.com
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.knack.com/llms.txt
 maintainers:
   - FN: Kin Lane
