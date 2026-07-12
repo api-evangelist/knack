@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/knack-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApplicationId
+  type: apiKey
+  in: header
+  parameter: X-Knack-Application-Id
+  description: Knack Application ID identifying the target application
+  sources:
+  - openapi/knack-openapi.yml
+- name: RestApiKey
+  type: apiKey
+  in: header
+  parameter: X-Knack-REST-API-Key
+  description: REST API key authorizing the request
+  sources:
+  - openapi/knack-openapi.yml

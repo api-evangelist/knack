@@ -46,6 +46,10 @@ apis:
         url: https://docs.knack.com/reference/using-the-api
 
 common:
+  - type: DomainSecurity
+    url: security/knack-domain-security.yml
+  - type: Authentication
+    url: authentication/knack-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/knackhq
   - type: LinkedIn
@@ -62,6 +66,8 @@ common:
     url: https://support.knack.com
   - type: LlmsText
     url: https://docs.knack.com/llms.txt
+  - url: https://www.knack.com/blog/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
