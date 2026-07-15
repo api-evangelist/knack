@@ -46,6 +46,8 @@ apis:
         url: https://docs.knack.com/reference/using-the-api
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/knack-agentic-access.yml
   - type: DomainSecurity
     url: security/knack-domain-security.yml
   - type: Authentication
