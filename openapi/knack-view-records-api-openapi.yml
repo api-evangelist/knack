@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: Knack REST Object Records View Records API
+  description: Knack is a no-code database and application platform. The Knack REST API exposes record management against application objects and views via predictable, resource-oriented URLs. All requests and responses use JSON. Authentication uses an Application ID combined with a REST API key, both passed in request headers.
+  version: v1
+  contact:
+    name: Knack Developer Support
+    url: https://docs.knack.com/reference/introduction-to-the-api
+servers:
+- url: https://api.knack.com/v1
+  description: Knack production REST API server
+security:
+- ApplicationId: []
+  RestApiKey: []
+tags:
+- name: View Records
+  description: Operations on records via page view endpoints
+paths:
+  /pages/{scene_key}/views/{view_key}/records:
+    get:
+      operationId: listViewRecords
+      summary: List View Records
+      description: Retrieve records via a page view. View-based requests honor the view's configured filters, columns, and access controls.
+      tags:
+      - View Records
+      parameters:
+      - name: scene_key
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Scene (page) key (for example, scene_1)
+      - name: view_key
+        in: path
+        required: true
+        schema:
+          type: string
+        description: View key (for example, view_1)
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+      - name: rows_per_page
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 25
+      responses:
+        '200':
+          description: Successful response with record list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecordListResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    RecordListResponse:
+      type: object
+      properties:
+        total_pages:
+          type: integer
+        current_page:
+          type: integer
+        total_records:
+          type: integer
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/Record'
+    Record:
+      type: object
+      description: A Knack record. Fields are keyed by field IDs (for example, field_1).
+      additionalProperties: true
+      properties:
+        id:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+              field:
+                type: string
+                nullable: true
+  responses:
+    Unauthorized:
+      description: Missing or invalid Application ID or REST API key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  securitySchemes:
+    ApplicationId:
+      type: apiKey
+      in: header
+      name: X-Knack-Application-Id
+      description: Knack Application ID identifying the target application
+    RestApiKey:
+      type: apiKey
+      in: header
+      name: X-Knack-REST-API-Key
+      description: REST API key authorizing the request
