@@ -8,7 +8,19 @@ description: >-
   API with predictable URLs for creating, retrieving, updating, and deleting
   records, authenticated via an Application ID and REST API key.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/knack.png
 tags:
   - No-Code
   - Database
@@ -21,30 +33,47 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: knack:rest-api
-    name: Knack REST API
-    description: >-
-      Resource-oriented REST API for managing records in Knack applications.
-      Supports create, retrieve, update, and delete operations against
-      specific objects or page views. All requests and responses use JSON.
-      Authentication uses an Application ID combined with a REST API key
-      passed in request headers.
-    humanURL: https://docs.knack.com/reference/introduction-to-the-api
-    baseURL: https://api.knack.com/v1
-    tags:
-      - No-Code
-      - Database
-      - Records
-      - Objects
-      - Views
-    properties:
-      - type: Documentation
-        url: https://docs.knack.com/reference/introduction-to-the-api
-      - type: Using the API
-        url: https://docs.knack.com/docs/using-the-api
-      - type: APIReference
-        url: https://docs.knack.com/reference/using-the-api
-
+- aid: knack:rest-api
+  name: Knack REST API
+  description: >-
+    Resource-oriented REST API for managing records in Knack applications. Supports create, retrieve,
+    update, and delete operations against specific objects or page views. All requests and responses use
+    JSON. Authentication uses an Application ID combined with a REST API key passed in request headers.
+  humanURL: https://docs.knack.com/reference/introduction-to-the-api
+  baseURL: https://api.knack.com/v1
+  tags:
+  - No-Code
+  - Database
+  - Records
+  - Objects
+  - Views
+  properties:
+  - type: Documentation
+    url: https://docs.knack.com/reference/introduction-to-the-api
+  - type: Using the API
+    url: https://docs.knack.com/docs/using-the-api
+  - type: APIReference
+    url: https://docs.knack.com/reference/using-the-api
+- aid: knack:knack-object-records-api
+  name: Knack Object Records API
+  description: CRUD operations on records via object endpoints
+  humanURL: https://docs.knack.com/reference/introduction-to-the-api
+  baseURL: https://api.knack.com/v1
+  tags:
+  - Object Records
+  properties:
+  - type: OpenAPI
+    url: openapi/knack-object-records-api-openapi.yml
+- aid: knack:knack-view-records-api
+  name: Knack View Records API
+  description: Operations on records via page view endpoints
+  humanURL: https://docs.knack.com/reference/introduction-to-the-api
+  baseURL: https://api.knack.com/v1
+  tags:
+  - View Records
+  properties:
+  - type: OpenAPI
+    url: openapi/knack-view-records-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/knack-agentic-access.yml
