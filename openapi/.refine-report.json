@@ -1,0 +1,16 @@
+{
+  "provider": "knack",
+  "sources": [
+    "knack-object-records-api-openapi.yml",
+    "knack-view-records-api-openapi.yml"
+  ],
+  "outputs": [
+    "knack-object-records-api-openapi.yml",
+    "knack-view-records-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
