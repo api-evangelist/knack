@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Knack REST Object Records View Records API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Knack-Application-Id",
+      "value": "{{X-Knack-Application-Id}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "View Records",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List View Records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.knack.com/v1/pages/:scene_key/views/:view_key/records",
+            "params": [
+              {
+                "name": "scene_key",
+                "value": "",
+                "type": "path",
+                "description": "Scene (page) key (for example, scene_1)"
+              },
+              {
+                "name": "view_key",
+                "value": "",
+                "type": "path",
+                "description": "View key (for example, view_1)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rows_per_page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve records via a page view. View-based requests honor the view's configured filters, columns, and access controls."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
