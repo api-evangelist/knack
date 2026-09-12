@@ -43,7 +43,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/knack/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-09-06'
 specificationVersion: '0.23'
 apis:
 - aid: knack:rest-api
@@ -112,6 +112,12 @@ common:
     url: https://docs.knack.com/llms.txt
   - url: https://www.knack.com/blog/feed/
     type: Blog
+  - name: MCP Server
+    url: https://mcp.knack.com/mcp
+    type: MCPServer
+  - name: MCP Documentation
+    url: https://docs.knack.com/docs/mcp
+    type: MCPDocumentation
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
