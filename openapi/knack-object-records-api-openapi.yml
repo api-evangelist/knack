@@ -194,38 +194,12 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Missing or invalid Application ID or REST API key
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   schemas:
     DeleteResponse:
       type: object
       properties:
         delete:
           type: boolean
-    ErrorResponse:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            type: object
-            properties:
-              message:
-                type: string
-              field:
-                type: string
-                nullable: true
     Record:
       type: object
       description: A Knack record. Fields are keyed by field IDs (for example, field_1).
@@ -233,10 +207,6 @@ components:
       properties:
         id:
           type: string
-    RecordRequest:
-      type: object
-      description: Payload to create or update a record. Use field keys (field_X) as property names with appropriate values for each field type.
-      additionalProperties: true
     RecordListResponse:
       type: object
       properties:
@@ -250,6 +220,36 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Record'
+    RecordRequest:
+      type: object
+      description: Payload to create or update a record. Use field keys (field_X) as property names with appropriate values for each field type.
+      additionalProperties: true
+    ErrorResponse:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+              field:
+                type: string
+                nullable: true
+  responses:
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Missing or invalid Application ID or REST API key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     ApplicationId:
       type: apiKey
