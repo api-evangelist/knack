@@ -195,18 +195,6 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   schemas:
-    DeleteResponse:
-      type: object
-      properties:
-        delete:
-          type: boolean
-    Record:
-      type: object
-      description: A Knack record. Fields are keyed by field IDs (for example, field_1).
-      additionalProperties: true
-      properties:
-        id:
-          type: string
     RecordListResponse:
       type: object
       properties:
@@ -220,10 +208,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Record'
-    RecordRequest:
+    Record:
       type: object
-      description: Payload to create or update a record. Use field keys (field_X) as property names with appropriate values for each field type.
+      description: A Knack record. Fields are keyed by field IDs (for example, field_1).
       additionalProperties: true
+      properties:
+        id:
+          type: string
     ErrorResponse:
       type: object
       properties:
@@ -237,15 +228,24 @@ components:
               field:
                 type: string
                 nullable: true
+    DeleteResponse:
+      type: object
+      properties:
+        delete:
+          type: boolean
+    RecordRequest:
+      type: object
+      description: Payload to create or update a record. Use field keys (field_X) as property names with appropriate values for each field type.
+      additionalProperties: true
   responses:
-    NotFound:
-      description: Resource not found
+    Unauthorized:
+      description: Missing or invalid Application ID or REST API key
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Missing or invalid Application ID or REST API key
+    NotFound:
+      description: Resource not found
       content:
         application/json:
           schema:

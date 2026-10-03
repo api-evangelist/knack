@@ -59,6 +59,19 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    RecordListResponse:
+      type: object
+      properties:
+        total_pages:
+          type: integer
+        current_page:
+          type: integer
+        total_records:
+          type: integer
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/Record'
     ErrorResponse:
       type: object
       properties:
@@ -79,19 +92,6 @@ components:
       properties:
         id:
           type: string
-    RecordListResponse:
-      type: object
-      properties:
-        total_pages:
-          type: integer
-        current_page:
-          type: integer
-        total_records:
-          type: integer
-        records:
-          type: array
-          items:
-            $ref: '#/components/schemas/Record'
   responses:
     Unauthorized:
       description: Missing or invalid Application ID or REST API key
