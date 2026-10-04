@@ -59,6 +59,13 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    Record:
+      type: object
+      description: A Knack record. Fields are keyed by field IDs (for example, field_1).
+      additionalProperties: true
+      properties:
+        id:
+          type: string
     RecordListResponse:
       type: object
       properties:
@@ -85,13 +92,6 @@ components:
               field:
                 type: string
                 nullable: true
-    Record:
-      type: object
-      description: A Knack record. Fields are keyed by field IDs (for example, field_1).
-      additionalProperties: true
-      properties:
-        id:
-          type: string
   responses:
     Unauthorized:
       description: Missing or invalid Application ID or REST API key
