@@ -194,49 +194,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    Unauthorized:
-      description: Missing or invalid Application ID or REST API key
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   schemas:
-    RecordListResponse:
-      type: object
-      properties:
-        total_pages:
-          type: integer
-        current_page:
-          type: integer
-        total_records:
-          type: integer
-        records:
-          type: array
-          items:
-            $ref: '#/components/schemas/Record'
-    DeleteResponse:
-      type: object
-      properties:
-        delete:
-          type: boolean
-    Record:
-      type: object
-      description: A Knack record. Fields are keyed by field IDs (for example, field_1).
-      additionalProperties: true
-      properties:
-        id:
-          type: string
-    RecordRequest:
-      type: object
-      description: Payload to create or update a record. Use field keys (field_X) as property names with appropriate values for each field type.
-      additionalProperties: true
     ErrorResponse:
       type: object
       properties:
@@ -250,6 +208,48 @@ components:
               field:
                 type: string
                 nullable: true
+    DeleteResponse:
+      type: object
+      properties:
+        delete:
+          type: boolean
+    RecordListResponse:
+      type: object
+      properties:
+        total_pages:
+          type: integer
+        current_page:
+          type: integer
+        total_records:
+          type: integer
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/Record'
+    Record:
+      type: object
+      description: A Knack record. Fields are keyed by field IDs (for example, field_1).
+      additionalProperties: true
+      properties:
+        id:
+          type: string
+    RecordRequest:
+      type: object
+      description: Payload to create or update a record. Use field keys (field_X) as property names with appropriate values for each field type.
+      additionalProperties: true
+  responses:
+    Unauthorized:
+      description: Missing or invalid Application ID or REST API key
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     ApplicationId:
       type: apiKey
