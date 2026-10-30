@@ -1,4 +1,4 @@
-# Knack (knack)
+# Knack
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,62 +66,109 @@
 
 Knack is a no-code database and application platform that lets users build custom web applications from structured data without writing code. The platform combines a relational database, forms, search, charts, and user access controls with embeddable pages. Knack offers a resource-oriented REST API with predictable URLs for creating, retrieving, updating, and deleting records, authenticated via an Application ID and REST API key.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/knack/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/knack/refs/heads/main/apis.yml)
+**Areas:** No-Code · Database · Application Builder · Low-Code · Web Applications
 
-## Scope
+## Knack on APIs.io
 
-- **Type:** Index
+Everything profiled for Knack is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/knack/](https://apis.io/providers/knack/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- No-Code
-- Database
-- Application Builder
-- Low-Code
-- Web Applications
+- [Knack REST API](https://apis.io/apis/knack/rest-api/) — Resource-oriented REST API for managing records in Knack applications. Supports create, retrieve, update, and delete operations against specific objects or…
+- [Knack Object Records API](https://apis.io/apis/knack/knack-object-records-api/) — CRUD operations on records via object endpoints
+- [Knack View Records API](https://apis.io/apis/knack/knack-view-records-api/) — Operations on records via page view endpoints
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Knack REST API
+Model Context Protocol servers that expose the API to agents.
 
-Resource-oriented REST API for managing records in Knack applications. Supports create, retrieve, update, and delete operations against specific objects or page views. All requests and responses use JSON. Authentication uses an Application ID combined with a REST API key passed in request headers.
+- [MCP Server](https://apis.io/servers/knack/mcp-server/)
 
-- **Human URL:** [https://docs.knack.com/reference/introduction-to-the-api](https://docs.knack.com/reference/introduction-to-the-api)
-- **Base URL:** `https://api.knack.com/v1`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- No-Code
-- Database
-- Records
-- Objects
-- Views
+- [Knack Agentic Access](https://apis.io/agentic-access/knack/knack-agentic-access/)
 
-#### Properties
+#### Collections (3)
 
-- [Documentation](https://docs.knack.com/reference/introduction-to-the-api)
-- [Using the  A P I](https://docs.knack.com/docs/using-the-api)
-- [API Reference](https://docs.knack.com/reference/using-the-api)
-- [Postman Collection](collections/knack.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/knack.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Knack REST API](https://apis.io/collections/knack/open-knack/)
+- [Knack REST Object Records API](https://apis.io/collections/knack/open-knack-object-records-api/)
+- [Knack REST Object Records View Records API](https://apis.io/collections/knack/open-knack-view-records-api/)
 
-- [GitHub Organization](https://github.com/knackhq)
-- [LinkedIn](https://www.linkedin.com/company/knackhq)
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Knack Authentication](https://apis.io/security/knack/knack-authentication/)
+- [Knack Domain Security](https://apis.io/security/knack/knack-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.knack.com)
 - [Documentation](https://docs.knack.com)
 - [Pricing](https://www.knack.com/pricing)
-- [Sign Up](https://dashboard.knack.com/sign-up)
 - [Support](https://support.knack.com)
-- [L L Ms Txt](https://docs.knack.com/llms.txt)
+- [Blog](https://www.knack.com/blog/feed/)
+- [GitHub](https://github.com/knackhq)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 52.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 29.8 |
+| Access clarity | 23.7 |
+
+**Agent readiness 20.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/knack/](https://apis.io/providers/knack/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Knack: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/knack/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
